@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "/service";
+package service;
+
+service Predict{
+  rpc getPredict(PredictRequest) returns (PredictReply){}
+}
+
+message PredictRequest{
+  string size = 1;
+  string randread = 2;
+  string randwrite = 3;
+  string read = 4;
+  string write = 5;
+}
+
+message PredictReply{
+  string message = 1;
+}
